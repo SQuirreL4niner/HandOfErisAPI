@@ -37,7 +37,7 @@ stages:
         rootFolderOrFile: '/home/vsts/work/1/s/handoferis-0.0.1-SNAPSHOT.jar'
         includeRootFolder: true
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/handoferis-0.0.1-SNAPSHOT.jar'
         replaceExistingArchive: true
     - task: PublishBuildArtifacts@1
       inputs:
