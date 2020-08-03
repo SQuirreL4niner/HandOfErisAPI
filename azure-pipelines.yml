@@ -37,7 +37,7 @@ stages:
         rootFolderOrFile: '$(Build.BinariesDirectory)'
         includeRootFolder: true
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).jar'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/libs/$(Build.BuildId).jar'
         replaceExistingArchive: true
 
     - task: PublishBuildArtifacts@1
