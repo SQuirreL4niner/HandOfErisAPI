@@ -30,7 +30,7 @@ stages:
         jdkArchitectureOption: 'x64'
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
-        tasks: 'build'
+        tasks: 'build --stacktrace --info'
 
     - task: PublishBuildArtifacts@1
       inputs:
