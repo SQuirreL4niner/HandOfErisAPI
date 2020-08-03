@@ -34,11 +34,12 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: '/home/vsts/work/1/s/handoferis-0.0.1-SNAPSHOT.jar'
-        includeRootFolder: true
-        archiveType: 'jar'
-        archiveFile: '/home/vsts/work/1/s/handoferis-0.0.1-SNAPSHOT.jar'
+        rootFolderOrFile: '$(Build.BinariesDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/api-$(Build.BuildId).zip'
         replaceExistingArchive: true
+
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
