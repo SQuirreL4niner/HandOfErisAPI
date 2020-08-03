@@ -34,7 +34,7 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: $(Build.BinariesDirectory)'
+        rootFolderOrFile: $(Pipeline.Workspace)'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/api-$(Build.BuildId).zip'
