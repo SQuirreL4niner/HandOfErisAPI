@@ -34,10 +34,10 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: $(Pipeline.Workspace)'
+        rootFolderOrFile: ''
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/api-$(Build.BuildId).zip'
+        archiveFile: 'api-$(Build.BuildId).zip'
         replaceExistingArchive: true
 
     - task: PublishBuildArtifacts@1
