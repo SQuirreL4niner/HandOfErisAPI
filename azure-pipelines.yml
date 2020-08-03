@@ -34,7 +34,7 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: '$(Build.BinariesDirectory)/handoferis/libs/handoferis-{$project.version}.jar'
+        rootFolderOrFile: '$(Build.BinariesDirectory)/handoferis/libs'
         includeRootFolder: true
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
