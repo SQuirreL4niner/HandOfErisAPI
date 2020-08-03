@@ -6,8 +6,8 @@ plugins {
 
 group = 'com.handoferis'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
-targetCompatibility = '14'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -27,6 +27,7 @@ dependencies {
 	implementation 'org.springframework.security:spring-security-oauth2-jose'
 	implementation 'org.springframework.security:spring-security-config'
 	compileOnly 'org.projectlombok:lombok'
+	compile group: 'com.microsoft.azure', name: 'azure-storage-spring-boot-starter', version: '2.2.5'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
