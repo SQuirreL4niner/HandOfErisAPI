@@ -1,7 +1,7 @@
 package com.handoferis.handoferis.controllers;
 
 
-import com.handoferis.handoferis.models.User;
+import com.handoferis.handoferis.models.Users;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

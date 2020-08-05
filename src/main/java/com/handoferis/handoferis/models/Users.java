@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Entity
-public class User {
+//@Entity
+public class Users {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", insertable=false, updatable = false, nullable = false, columnDefinition = "VARCHAR(255")
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(insertable=false, updatable = false, nullable = false, columnDefinition = "VARCHAR(255")
     private UUID id;
     private String username;
     private String email;
@@ -19,10 +19,10 @@ public class User {
     private String country;
     private Date registrationDate;
 
-    public User() {
+    public Users() {
     }
 
-    public User(UUID id, String username, String email, String phone, String state, String zip, String country, Date registrationDate) {
+    public Users(UUID id, String username, String email, String phone, String state, String zip, String country, Date registrationDate) {
         this.id = id;
         this.username = username;
         this.email = email;

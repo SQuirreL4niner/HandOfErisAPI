@@ -1,6 +1,6 @@
 package com.handoferis.handoferis.DAO;
 
-import com.handoferis.handoferis.models.User;
+import com.handoferis.handoferis.models.Users;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,11 +10,11 @@ import java.util.UUID;
 @Component
 public class UserDAOService {
 
-    private static List<User> users = new ArrayList<>();
+    private static List<Users> users = new ArrayList<>();
 
-    public List<User> findAll() { return users; }
+    public List<Users> findAll() { return users; }
 
-    public User save(User user) {
+    public Users save(Users user) {
         users.add(user);
         return user;
     }
