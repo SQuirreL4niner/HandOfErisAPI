@@ -1,11 +1,10 @@
-package com.handoferis.handoferis.DAO;
+package com.handoferis.DAO;
 
-import com.handoferis.handoferis.models.Users;
+import com.handoferis.models.Users;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class UserDAOService {

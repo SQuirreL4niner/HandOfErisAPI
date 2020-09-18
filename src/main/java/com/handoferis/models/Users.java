@@ -1,4 +1,4 @@
-package com.handoferis.handoferis.models;
+package com.handoferis.models;
 
 import javax.persistence.*;
 import java.util.Date;

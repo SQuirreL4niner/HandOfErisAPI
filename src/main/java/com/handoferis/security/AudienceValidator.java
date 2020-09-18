@@ -1,4 +1,4 @@
-package com.handoferis.handoferis.security;
+package com.handoferis.security;
 
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
@@ -16,6 +16,8 @@ public class AudienceValidator implements OAuth2TokenValidator<Jwt> {
         OAuth2Error error = new OAuth2Error("invalid token", "request audience is missing", null);
 
         if(token.getAudience().contains(audience)){
+            var test = token;
+
             return OAuth2TokenValidatorResult.success();
         }
 

@@ -27,7 +27,17 @@ dependencies {
 	implementation 'org.springframework.security:spring-security-oauth2-jose'
 	implementation 'org.springframework.security:spring-security-config'
 	compileOnly 'org.projectlombok:lombok'
-	compile group: 'com.microsoft.azure', name: 'azure-storage-spring-boot-starter', version: '2.2.5'
+	compile group: 'org.springframework.boot', name: 'spring-boot-maven-plugin', version: '2.3.3.RELEASE'
+	compile group: 'com.microsoft.azure', name: 'azure-webapp-maven-plugin', version: '1.9.1'
+	compile group: 'com.microsoft.azure', name: 'azure-keyvault', version: '1.2.4'
+	compile group: 'com.microsoft.azure', name: 'azure-keyvault-cryptography', version: '1.2.4'
+	compile group: 'com.microsoft.azure', name: 'azure-keyvault-extensions', version: '1.2.4'
+	compile group: 'com.microsoft.azure', name: 'azure-keyvault-core', version: '1.2.4'
+	compile group: 'com.microsoft.azure', name: 'azure-keyvault-webkey', version: '1.2.4'
+	compile group: 'com.azure', name: 'azure-storage-blob', version: '12.1.0'
+	compile group: 'com.microsoft.azure', name: 'adal4j', version: '1.6.5'
+	compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
+	compile group: 'com.auth0', name: 'auth0-spring-security-api', version: '1.4.0'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -42,4 +52,19 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+bootRun {
+
+}
+
+tasks.register("bootRunDev") {
+	group = "application"
+	description = "Runs the Spring Boot application with the dev profile"
+	doFirst {
+		tasks.bootRun.configure {
+			systemProperty("spring.profiles.active", "dev")
+		}
+	}
+	finalizedBy("bootRun")
 }

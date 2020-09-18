@@ -1,4 +1,4 @@
-package com.handoferis.handoferis;
+package com.handoferis;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
