@@ -1,14 +1,14 @@
 debug: true
-server:
-  ssl:
-    #key-store: classpath:RootCA.crt
-    key-store: classpath:keystore.p12
-    #key-store: classpath:RootCA.pem
-    key-store-password: password
-    key-store-type: pkcs12
-    key-alias: tomcat
-    key-password: password
-  port: 8443
+#server:
+#  ssl:
+#    #key-store: classpath:RootCA.crt
+#    key-store: classpath:keystore.p12
+#    #key-store: classpath:RootCA.pem
+#    key-store-password: password
+#    key-store-type: pkcs12
+#    key-alias: tomcat
+#    key-password: password
+#  port: 8443
 
 auth0:
   audience: ${AUDIENCE}
