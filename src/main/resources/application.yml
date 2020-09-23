@@ -36,6 +36,7 @@ azure:
 
 spring:
   security:
+    require-ssl: true
     oauth2:
       resourceserver:
         jwt:
