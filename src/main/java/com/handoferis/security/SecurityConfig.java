@@ -44,11 +44,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //http.oauth2ResourceServer().jwt();
         //allows preflight headers which is fine
         http
-                //.cors()
-                //.and()
+                .cors()
+                .and()
                 .authorizeRequests()
-                //.mvcMatchers("/api/user/test").permitAll()
-                //.mvcMatchers("/api/user/test-private").authenticated()
+                .mvcMatchers("/api/user/test").permitAll()
+                .mvcMatchers("/api/user/test-private").authenticated()
                 //.mvcMatchers("/api/admin/uploadsong").hasAuthority("SCOPE_upload:music")
                 //.mvcMatchers("/api/admin/uploadsong").hasRole("ROLE_")
                 .mvcMatchers("/api/admin/retrievesongs").hasAuthority("SCOPE_upload:music")
@@ -59,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .anyRequest()
 //                .requiresSecure()
                 .and()
-                .csrf().disable()
+                //.csrf().disable()
                 .oauth2ResourceServer().jwt();
     }
 
