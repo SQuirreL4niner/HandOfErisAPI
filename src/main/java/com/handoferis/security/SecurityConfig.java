@@ -52,14 +52,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.mvcMatchers("/api/admin/uploadsong").hasAuthority("SCOPE_upload:music")
                 //.mvcMatchers("/api/admin/uploadsong").hasRole("ROLE_")
                 .mvcMatchers("/api/admin/retrievesongs").hasAuthority("SCOPE_upload:music")
-//                .and()
+                .and()
 //                .x509()
-                .and()
-                .requiresChannel()
-                .anyRequest()
-                .requiresSecure()
-                .and()
-                .csrf().disable()
+//                .and()
+//                .requiresChannel()
+//                .anyRequest()
+//                .requiresSecure()
+//                .and()
+//                .csrf().disable()
                 .oauth2ResourceServer().jwt();
     }
 
