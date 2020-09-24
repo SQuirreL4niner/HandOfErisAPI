@@ -44,8 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //http.oauth2ResourceServer().jwt();
         //allows preflight headers which is fine
         http
-                //.cors()
-                //.and()
+                .cors()
+                .and()
                 .authorizeRequests()
                 .mvcMatchers("/api/user/test").permitAll()
                 .mvcMatchers("/api/user/test-private").authenticated()
@@ -68,8 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList("https://localhost:3000"));
         configuration.setAllowedOrigins(Arrays.asList("https://localhost:8580"));
-        configuration.setAllowedOrigins(Arrays.asList("hhttps://devapi.handoferis.us"));
-        configuration.setAllowedOrigins(Arrays.asList("https://dev-handoferis-api.azurewebsites.net"));
+        configuration.setAllowedOrigins(Arrays.asList("https://dev-handoferis-ui.azureedge.net"));
+        configuration.setAllowedOrigins(Arrays.asList("https://dev.handoferis.us"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         configuration.setAllowCredentials(true);
         configuration.addAllowedHeader("Authorization");
