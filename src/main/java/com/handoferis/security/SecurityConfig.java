@@ -68,8 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList("https://localhost:3000"));
         configuration.setAllowedOrigins(Arrays.asList("https://localhost:8580"));
-        configuration.setAllowedOrigins(Arrays.asList("https://dev-handoferis-ui.azureedge.net"));
-        configuration.setAllowedOrigins(Arrays.asList("https://dev.handoferis.us"));
+//        configuration.setAllowedOrigins(Arrays.asList("https://dev-handoferis-ui.azureedge.net"));
+//        configuration.setAllowedOrigins(Arrays.asList("https://dev.handoferis.us"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         configuration.setAllowCredentials(true);
         configuration.addAllowedHeader("Authorization");
