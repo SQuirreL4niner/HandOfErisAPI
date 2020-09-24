@@ -22,7 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+Application
+ArmTemplates
+gradle
 # Created by https://www.toptal.com/developers/gitignore/api/unity,windows,jetbrains+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity,windows,jetbrains+all
 
