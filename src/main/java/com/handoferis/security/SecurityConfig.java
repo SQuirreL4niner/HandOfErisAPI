@@ -44,8 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //http.oauth2ResourceServer().jwt();
         //allows preflight headers which is fine
         http
-                .cors()
-                .and()
+                //.cors()
+                //.and()
                 .authorizeRequests()
                 .mvcMatchers("/api/user/test").permitAll()
                 .mvcMatchers("/api/user/test-private").authenticated()

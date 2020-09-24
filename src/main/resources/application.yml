@@ -19,20 +19,6 @@ azure:
     uri: ${AZURE_URI}
     client-id: ${AZURE_ID}
     client-secret: ${AZURE_SECRET}
-#    uri: https://handoferiskeys.vault.azure.net
-#    client-id: b35b4e6a-2a6b-45f9-a0de-79e9a2df87d0
-#    client-secret: 422O_-0.Cm006VsuM~~TY~dv26y90EfqnS
-#    client-id: 4e90ec1c-3f44-4c7d-9133-787d4a4c1784
-#    client-secret: 5~~9EkMSQx6dFX-g_.pu_wbiNlz7hJp214
-#    tenant-id: c0149648-4686-452d-925e-87819bddb0b1
-#    connection-string:
-#      "DefaultEndpointsProtocol=https;AccountName=filestoragehandoferis;AccountKey=e8B0l62BRlgNFaBnJ7B/A3rRoxEKloL/OlQDwiuJo6LjktgbuyvrK/LT4XqwPutEPHB3kkbub9tgqp1vrtngLw=="
-    #            AccountName=filestoragehandoferis:
-    #            EnpointSuffix=core.windows.net:
-    #            AccountKey=e8B0l62BRlgNFaBnJ7B/A3rRoxEKloL/OlQDwiuJo6LjktgbuyvrK/LT4XqwPutEPHB3kkbub9tgqp1vrtngLw==:
-    #            blob=https://filestoragehandoferis.blob.core.windows.net/mp3s:
-    #      write-date-keys-as-timestamps=false:
-#    container-name: "test"
 
 spring:
   security:
@@ -76,4 +62,9 @@ spring:
       max-file-size: 20MB
       max-request-size: 20MB
 
-      #logging.level.org.springframework = info
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    com.handoferis: DEBUG
+    org.hibernate: ERROR
