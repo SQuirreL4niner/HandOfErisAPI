@@ -41,8 +41,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        //http.oauth2ResourceServer().jwt();
-        //allows preflight headers which is fine
         http
                 .cors()
                 .and()
@@ -53,23 +51,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.mvcMatchers("/api/admin/uploadsong").hasRole("ROLE_")
                 .mvcMatchers("/api/admin/retrievesongs").hasAuthority("SCOPE_upload:music")
                 .and()
-//                .x509()
-//                .and()
-//                .requiresChannel()
-//                .anyRequest()
-//                .requiresSecure()
-//                .and()
-//                .csrf().disable()
+                .requiresChannel()
+                .anyRequest()
+                .requiresSecure()
+                .and()
                 .oauth2ResourceServer().jwt();
     }
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://localhost:3000"));
-        configuration.setAllowedOrigins(Arrays.asList("https://localhost:8580"));
-        configuration.setAllowedOrigins(Arrays.asList("https://dev-handoferis-ui.azureedge.net"));
-        configuration.setAllowedOrigins(Arrays.asList("https://dev.handoferis.us"));
+        configuration.addAllowedOrigin("https://localhost:3000");
+        configuration.addAllowedOrigin("https://localhost:8580");
+        configuration.addAllowedOrigin("https://dev-handoferis-ui.azureedge.net");
+        configuration.addAllowedOrigin("https://dev.handoferis.us");
         configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         configuration.setAllowCredentials(true);
         configuration.addAllowedHeader("Authorization");

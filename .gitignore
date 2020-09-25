@@ -24,7 +24,7 @@ yarn-error.log*
 
 Application
 ArmTemplates
-gradle
+#gradle
 # Created by https://www.toptal.com/developers/gitignore/api/unity,windows,jetbrains+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity,windows,jetbrains+all
 
