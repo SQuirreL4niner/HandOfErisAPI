@@ -51,10 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.mvcMatchers("/api/admin/uploadsong").hasRole("ROLE_")
                 .mvcMatchers("/api/admin/retrievesongs").hasAuthority("SCOPE_upload:music")
                 .and()
-                .requiresChannel()
-                .anyRequest()
-                .requiresSecure()
-                .and()
                 .oauth2ResourceServer().jwt();
     }
 
