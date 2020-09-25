@@ -1,18 +1,18 @@
 debug: true
-server:
-#  ssl:
-#    key-store: classpath:keystore.p12
-#    key-store-password: password
-#    key-store-type: pkcs12
-#    key-alias: tomcat
-#    key-password: password
-#  port: 8443
-  tomcat:
-    accesslog:
-      suffix: .log
-      enabled: true
-      prefix: access_log
-      file-date-format: .yyyy-MM-dd
+#server:
+##  ssl:
+##    key-store: classpath:keystore.p12
+##    key-store-password: password
+##    key-store-type: pkcs12
+##    key-alias: tomcat
+##    key-password: password
+##  port: 8443
+#  tomcat:
+#    accesslog:
+#      suffix: .log
+#      enabled: true
+#      prefix: access_log
+#      file-date-format: .yyyy-MM-dd
 
 auth0:
   audience: ${AUDIENCE}
