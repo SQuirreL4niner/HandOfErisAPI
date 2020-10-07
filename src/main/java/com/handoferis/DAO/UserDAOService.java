@@ -1,6 +1,6 @@
 package com.handoferis.DAO;
 
-import com.handoferis.models.Users;
+import com.handoferis.pojos.Users;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

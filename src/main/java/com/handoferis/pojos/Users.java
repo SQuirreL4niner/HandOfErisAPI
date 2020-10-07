@@ -1,6 +1,5 @@
-package com.handoferis.models;
+package com.handoferis.pojos;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 

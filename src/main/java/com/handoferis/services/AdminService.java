@@ -1,12 +1,17 @@
 package com.handoferis.services;
 
+import com.handoferis.DAL.UploadJamDAL;
 import com.handoferis.blob.BlobConfig;
-import com.handoferis.models.RehearsalJam;
+import com.handoferis.pojos.RehearsalJam;
+import com.handoferis.pojos.UploadJam;
+
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.CloudBlockBlob;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -16,16 +21,22 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.security.InvalidKeyException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-@Component
+@Repository
 public class AdminService {
 
-    @Autowired
-    private BlobConfig blobConfig ;
+    private final BlobConfig blobConfig ;
 
-    public URI upload(MultipartFile multipartFile)
+    private final UploadJamDAL uploadJamDAL;
+
+    public AdminService( UploadJamDAL uploadJamDAL, BlobConfig blobConfig)
+    {
+        this.uploadJamDAL = uploadJamDAL;
+        this.blobConfig = blobConfig;
+    }
+
+    public URI upload(MultipartFile multipartFile, String title, String notes, Date date, String user)
     {
         URI uri = null;
         CloudBlockBlob blob = null;
@@ -38,6 +49,10 @@ public class AdminService {
             blob.upload(multipartFile.getInputStream(), -1);
 
             uri = blob.getUri();
+
+            var jam = new UploadJam(title, date, new Date(), user, uri.toString(), notes);
+
+            uploadJamDAL.addNewUploadJam(jam);
         }
         catch (URISyntaxException e)
         {
@@ -79,5 +94,38 @@ public class AdminService {
         }
 
         return jams;
+    }
+
+    public List<UploadJam> getAllSongs()
+    {
+        List jams = new ArrayList<UploadJam>();
+
+        try
+        {
+            var results = uploadJamDAL.getAllUploadJams();
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return jams;
+    }
+
+    public Optional getJamById(UUID id)
+    {
+
+        try
+        {
+            var result = uploadJamDAL.getUploadJamById(id.toString());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

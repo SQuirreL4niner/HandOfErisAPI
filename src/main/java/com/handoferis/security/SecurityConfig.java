@@ -1,5 +1,6 @@
 package com.handoferis.security;
 
+import com.google.common.collect.ImmutableList;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -61,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         configuration.addAllowedOrigin("https://localhost:8580");
         configuration.addAllowedOrigin("https://dev-handoferis-ui.azureedge.net");
         configuration.addAllowedOrigin("https://dev.handoferis.us");
-        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+        configuration.setAllowedMethods(ImmutableList.of("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
         configuration.setAllowCredentials(true);
         configuration.addAllowedHeader("Authorization");
         configuration.addAllowedHeader("Scope");

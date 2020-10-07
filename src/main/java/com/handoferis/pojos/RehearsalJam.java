@@ -1,7 +1,6 @@
-package com.handoferis.models;
+package com.handoferis.pojos;
 
-import org.hibernate.id.GUIDGenerator;
-import org.springframework.data.annotation.Transient;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.UUID;
 

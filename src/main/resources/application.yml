@@ -1,12 +1,12 @@
 debug: true
-#server:
-##  ssl:
-##    key-store: classpath:keystore.p12
-##    key-store-password: password
-##    key-store-type: pkcs12
-##    key-alias: tomcat
-##    key-password: password
-##  port: 8443
+server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: password
+#    key-store-type: pkcs12
+#    key-alias: tomcat
+#    key-password: password
+#  port: 8443
 #  tomcat:
 #    accesslog:
 #      suffix: .log
@@ -25,6 +25,8 @@ azure:
     client-secret: ${AZURE_SECRET}
 
 spring:
+  main:
+    banner-mode=off:
   security:
     oauth2:
       resourceserver:
@@ -44,6 +46,10 @@ spring:
 
 
   data:
+    mongodb:
+      uri: ${MONGO_URI}
+      database: ${MONGO_DB}
+
     jpa:
       repositories:
         bootstrap-mode=default:
@@ -69,5 +75,6 @@ logging:
   level:
     root: ERROR
     org.springframework.web: ERROR
+    org.springframework: ERROR
     com.handoferis: DEBUG
     org.hibernate: ERROR
