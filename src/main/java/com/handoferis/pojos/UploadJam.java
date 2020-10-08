@@ -3,6 +3,7 @@ package com.handoferis.pojos;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -25,6 +26,9 @@ public class UploadJam {
         this.user = user;
         this.blobURL = blobURL;
         this.notes = notes;
+    }
+
+    public UploadJam() {
     }
 
     public String getId() {

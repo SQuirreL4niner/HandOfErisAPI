@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.net.URI;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
@@ -48,6 +49,9 @@ public class AdminController {
                                      @RequestParam("notes") String notes, @RequestParam("date") Date date,
                                      @RequestParam("user") String user) throws IOException {
 
+        if(file.isEmpty()){
+            return (ResponseEntity) ResponseEntity.badRequest();
+        }
         URI url = adminService.upload(file, title, notes, date, user);
 
         if(url != null)
@@ -56,7 +60,7 @@ public class AdminController {
         }
         else
         {
-            return (ResponseEntity) ResponseEntity.noContent();
+            return (ResponseEntity) ResponseEntity.badRequest();
         }
     }
 
@@ -82,7 +86,7 @@ public class AdminController {
     }
 
     @GetMapping("/getjambyid/{id}")
-    public Optional getJamById(@PathVariable UUID id){
+    public UploadJam getJamById(@PathVariable String id){
         var result = adminService.getJamById(id);
         return result;
     }

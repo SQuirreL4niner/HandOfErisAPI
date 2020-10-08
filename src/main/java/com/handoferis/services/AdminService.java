@@ -21,6 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.security.InvalidKeyException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Repository
@@ -102,7 +103,7 @@ public class AdminService {
 
         try
         {
-            var results = uploadJamDAL.getAllUploadJams();
+            jams = uploadJamDAL.getAllUploadJams();
 
 
         }
@@ -114,18 +115,18 @@ public class AdminService {
         return jams;
     }
 
-    public Optional getJamById(UUID id)
+    public UploadJam getJamById(String id)
     {
-
+        var jam = new UploadJam();
         try
         {
-            var result = uploadJamDAL.getUploadJamById(id.toString());
+            jam = uploadJamDAL.getUploadJamById(id);
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
 
-        return null;
+        return jam;
     }
 }
